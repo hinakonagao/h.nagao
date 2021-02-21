@@ -437,9 +437,7 @@ header img{
 /*-- About_sp --*/
 .about-content{
   width: 75vw;
-}
-.about-content-inner{
-  padding: 30px 20px;
+  max-width: 100%;
 }
 .about-content-inner h4{
   font-size: 1.4rem;
