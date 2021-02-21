@@ -421,7 +421,7 @@ header img{
 .works-wrapper h3{
   padding-right: 0;
   padding-bottom: 15px;
-  font-weight: 1.6rem;
+  font-size: 1.6rem !important;
 }
 .works-icon{
   width: 60vw;
@@ -440,10 +440,10 @@ header img{
   max-width: 100%;
 }
 .about-content-inner h4{
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 .about-content-inner p{
-  font-size: 1.3rem !important;
+  font-size: 1.4rem !important;
 }
 .profile-img-wrapper{
   max-width: 70%;
