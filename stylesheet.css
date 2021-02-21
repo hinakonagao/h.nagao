@@ -440,16 +440,16 @@ header img{
   max-width: 100%;
 }
 .about-content-inner h4{
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 .about-content-inner p{
-  font-size: 1.2rem !important;
+  font-size: 1.3rem !important;
 }
 .profile-img-wrapper{
   max-width: 70%;
 }
 .profile-img-wrapper img{
-  width: 60vw;
+  width: 240px;
   object-fit:cover; /*画像の縦横比が狂わず切り取ってくれる*/
 }
 /*-- //About_sp --*/
