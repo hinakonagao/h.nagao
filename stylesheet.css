@@ -1,0 +1,448 @@
+/* -- base 共通 -- */
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  font-size: 1.6rem;
+  color: rgba(0,0,0,.8);
+  box-sizing: border-box;
+  letter-spacing: .05em;
+}
+a{ /*aタグのリセット*/
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover{
+  opacity: .5;
+  transition: .2s;
+}
+button{ /*btnタグのリセット*/
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+.section-wrapper{
+  /* background-color: aliceblue; */
+  padding: 70px 0;
+  text-align: center;
+}
+.flex-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-wrapper{
+  max-width: 1100px;
+  padding: 0 30px; /*画面幅を縮めた時に、左右の余白ができる*/
+  margin: 0 auto;
+}
+.section-title{
+  /* background-color: aqua; */
+  font-size: 3.2rem;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+  letter-spacing: .5rem;
+}
+.section-title-fade{
+  opacity: 0;
+    transform: translate(0, 50px); /* フェードインで動く高さを指定 */
+    transition: all 1000ms; /* フェードインにかかる時間を指定 */
+} 
+.section-title::after{
+  content:"";
+  display: block;
+  width: 80px;
+  height: 1.6px;
+  background-color: #888;
+  position: absolute;
+  top: 5rem;
+  left:0;
+  right: 0;
+  margin: auto;
+}
+/*-- //base --*/
+
+/*-- header --*/
+header{
+  background-color: #fff;
+  width: 100%;
+  height: 70px;
+  position:fixed;
+  z-index: 1;
+}
+header img{
+  height: 70px;
+  padding-left: 2vw;
+}
+
+.header-nav{
+  letter-spacing: .3rem;
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  right:0;
+  height:100vh;
+  width: 36.1vw;
+  text-align: center;
+  padding: 120px 0 0;
+  background-color:rgba(148, 148, 148, 0.8);
+  z-index: 2;
+  transform: translateX(100%); /*初期配置では画面の外側に隠れている*/
+  opacity: 0;
+  transition: transform .3s,opacity .3s;
+}
+.nav-item{
+  margin-bottom: 30px;
+}
+.header-nav a{
+  color: #fff;
+}
+/*---header fin---*/
+
+
+
+/*--ハンバーガーボタン（メニューが閉じているとき）--*/
+.burger-btn{ /*3本線のボタン*/
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 22px;
+  right: 4vw;
+  z-index: 3;
+}
+.bar{
+  display: block;
+  background-color: rgba(58, 35, 9 , 0.6);
+  height: 1.5px;
+  width: 27px;
+  border-radius: 1px;
+}
+.bar_top{
+  transform:translateY(-4px); /*クリックしたときにバツになるアニメーション*/
+  transition: transform .3s;
+}
+.bar_bottom{
+  transform: translateY(4px);
+  transition: transform .3s;
+}
+.menu{
+  display: block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: rgba(58, 35, 9 , 0.6);
+  font-weight: bold;
+  margin-left: 10px;
+  letter-spacing: 0.1rem;
+}
+
+/* ハンバーガーボタン（メニューが開いたとき） */
+.bar.cross.bar_top{ /*開いたときにcrossというclassが追加される*/
+  transform: translateY(2px)rotate(30deg);
+  transition: transform .3s;
+}
+.bar.cross.bar_mid{
+  opacity: 0;
+  transition: opacity .3s;
+}
+.bar.cross.bar_bottom{
+  transform: translateY(-2px)rotate(-30deg);
+  transition: transform .3s;
+}
+
+/* ハンバーガーメニューが開いたとき */
+.header-nav.open{
+  transform: translateX(0); /*初期値100%から現れる*/
+  opacity: 1;
+  transition: transform .3s,opacity .3s;
+}
+.burger-btn.black .bar{ /*スクロールしたときにMENUのボタンが黒くなる*/
+  background-color: #666;
+  transition: background-color .3s;
+}
+.burger-btn.black .menu{
+  color: #666;
+  transition: color .3s;
+}
+
+/*-- Top --*/
+.top{
+  height: 100vh;
+}
+.top::after{ /*トップの背景の黒い部分*/
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(249, 252, 235, 0.5);
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+}
+.top-wrapper{
+  height: 86.5%;
+  width: 76.4%;
+  background-image: url(./img/top.jpg);
+  background-color: rgba(255,255,255,0.5);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center 0;
+  position: relative;
+}
+.copy-wrapper{
+  position: absolute;
+  top: 80%;
+  right: 7%;
+  transform: translate(50%);
+  color: #333;
+}
+.effect-fade {
+  opacity: 0;
+  transform: translate(0, 10px); /* フェードインで動く高さを指定 */
+  transition: all 2000ms; /* フェードインにかかる時間を指定 */
+}
+.effect-scroll {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.copy-wrapper p{
+  padding-bottom: 20px;
+  letter-spacing: 0.5em;
+}
+/*-- //Top --*/
+
+/*-- Services --*/
+/*-- services.scssにて --*/
+/*-- //Services --*/
+
+/*-- works --*/
+.works{
+  background-color: ghostwhite;
+}
+.works-wrapper{
+  /* background-color: gold; */
+  width: 30%;
+  margin: 50px;
+  text-align: left;
+}
+.works .flex-box{
+  justify-content: center;
+}
+.works-wrapper h3{
+  font-size: 1.8rem;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+.works-icon{
+  width: 100%;
+}
+.works-icon img{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.works-icon img:hover{
+  opacity: .5;
+  transition: .2s;
+}
+/*-- //works --*/
+
+/*-- About --*/
+.about{
+  /* background-color: honeydew; */
+  margin-top: 50px;
+}
+.about-bg{
+  background-color: azure;
+}
+.profile-img-wrapper{
+  width: 36.4%;
+  position: absolute;
+  top:0 ;
+  left:10vw;
+}
+.profile-img-wrapper img{
+  width: 100%;
+}
+.about-content{
+  width: 840px;
+  max-width: 70%;
+  margin-left: auto;
+  padding: 120px 0 60px;
+  margin-bottom: 50px;
+}
+.about-content-inner{
+  max-width: 400px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+.about-content-inner h4{
+  text-align: left;
+  padding-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+.myname{
+  margin-bottom: 50px;
+  border-bottom: 1.2px solid #666 ;
+  display: inline-block;
+}
+.myname i {
+  padding-left: 15px;
+  color: dodgerblue;
+}
+.about-content-inner p{
+  text-align: left;
+}
+.skills{
+  padding-top: 40px;
+}
+.skills li{
+  height: 30px;
+  /* background-color: aqua; */
+  margin: 10px;
+}
+.skills p{
+  /* background-color: aquamarine; */
+  letter-spacing: 0.8em;
+  text-align: center;
+  display: inline-block;
+}
+.skills i{
+  display: inline-block;
+  padding-right: 10px;
+}
+.relative{
+  position: relative;
+  padding-top: 150px;
+}
+/*-- //About --*/
+
+/*-- Contact --*/
+.contact p:first-of-type{
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+#Contact{
+  height: 70vh;
+  background-image: url(./img/contact.jpeg);
+  background-color: rgba(255,255,255,0.7);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mail{
+  display: inline-block;
+  border-bottom: 1px solid #888;
+}
+/*-- //Contact --*/
+
+/*-- footer --*/
+footer{
+  background-color: #333;
+  height: 35px;
+}
+footer p{
+  color: #fff;
+  text-align: center;
+  padding: auto;
+  line-height: 35px;
+  font-size: 1rem;
+}
+/*-- footer --*/
+
+
+/*-- ↓sp（スマホ）版 --*/
+@media screen and (max-width: 768px){
+/*-- base_sp --*/
+.section-title{
+  font-size: 2.7rem;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+}
+.section-title::after{
+  content:"";
+  display: block;
+  width: 60px;
+  height: 1.5px;
+  background-color: #888;
+  position: absolute;
+  top: 4rem;
+  left:0;
+  right: 0;
+  margin: auto;
+}
+.flex-box{
+  display: block;
+}
+/*-- //base_sp --*/
+
+/*-- header_sp --*/
+header {
+  height: 60px;
+}
+header img{
+  height: 60px;
+}
+.burger-btn{
+  top: 23px;
+}
+/*-- //header_sp --*/
+
+/*-- fv_sp --*/
+.copy-wrapper{
+  transform: translate(30%);
+  top:82%;
+}
+.copy_jp{
+  font-size: 1.6rem;
+}
+.copy_company{
+  font-size: 1.6rem;
+}
+.copy-wrapper p{
+  font-size: 1.4rem;
+  letter-spacing: .15rem;
+}
+/*-- //fv_sp --*/
+
+/*-- works --*/
+.works-wrapper h3{
+  padding-right: 0;
+  padding-bottom: 15px;
+}
+.works-icon{
+  width: 60vw;
+}
+.works-icon img{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+/*-- //works --*/
+
+/*-- About --*/
+.profile-img-wrapper{
+  max-width: 70%;
+}
+.profile-img-wrapper img{
+  height: 35vh;
+  width: auto;
+  object-fit:cover; /*画像の縦横比が狂わず切り取ってくれる*/
+}
+/*-- //About --*/
+
+
+}

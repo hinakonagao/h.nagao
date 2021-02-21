@@ -1,0 +1,97 @@
+@charset "UTF-8";
+.section-wrapper .cording-wrapper {
+  width: 45%;
+  margin: 4vw;
+}
+
+.section-wrapper .cording-wrapper h3 {
+  font-size: 2.2rem;
+  padding: 30px 0;
+  color: navy;
+}
+
+.section-wrapper .cording-wrapper .cording-icon {
+  width: 24%;
+  padding-bottom: 30px;
+  margin: 0 auto;
+}
+
+.section-wrapper .cording-wrapper .cording-icon img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.section-wrapper .lphp-wrapper {
+  width: 45%;
+  margin: 4vw;
+}
+
+.section-wrapper .lphp-wrapper h3 {
+  font-size: 2.2rem;
+  padding: 30px 0;
+  color: maroon;
+}
+
+.section-wrapper .lphp-wrapper .lphp-icon {
+  width: 24%;
+  padding-bottom: 30px;
+  margin: 0 auto;
+}
+
+.section-wrapper .lphp-wrapper .lphp-icon img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.section-wrapper p {
+  padding-bottom: 15px;
+  letter-spacing: .3rem;
+}
+
+/*-- ↓sp（スマホ）版 --*/
+@media screen and (max-width: 768px) {
+  /*-- Services_sp---*/
+  .section-wrapper .cording-wrapper {
+    width: 70vw;
+    margin: 0 auto;
+    padding-bottom: 35px;
+    padding-top: 20px;
+  }
+  .section-wrapper .cording-wrapper h3 {
+    font-size: 1.8rem;
+    padding: 30px 0;
+    color: navy;
+  }
+  .section-wrapper .cording-wrapper .cording-icon {
+    width: 28%;
+    padding-bottom: 30px;
+    margin: 0 auto;
+  }
+  .section-wrapper .lphp-wrapper {
+    width: 70vw;
+    margin: 0 auto;
+    padding-bottom: 35px;
+    padding-top: 20px;
+  }
+  .section-wrapper .lphp-wrapper h3 {
+    font-size: 1.8rem;
+    padding: 30px 0;
+    color: maroon;
+  }
+  .section-wrapper .lphp-wrapper .lphp-icon {
+    width: 28%;
+    padding-bottom: 30px;
+    margin: 0 auto;
+  }
+  .section-wrapper p {
+    padding-bottom: 15px;
+    font-size: 1.4rem;
+    letter-spacing: .2rem;
+  }
+  /*-- //Services_sp --*/
+}
+/*# sourceMappingURL=services.css.map */
