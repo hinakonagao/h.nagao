@@ -441,18 +441,17 @@ header img{
 .about-content-inner{
   padding: 30px 20px;
 }
-.about-content h4{
-  font-weight: 11.4rem;
+.about-content-inner h4{
+  font-size: 1.4rem;
 }
-.about-content p{
-  font-weight: 1.2rem;
+.about-content-inner p{
+  font-size: 1.2rem !important;
 }
 .profile-img-wrapper{
   max-width: 70%;
 }
 .profile-img-wrapper img{
-  height: 35vh;
-  width: auto;
+  width: 60vw;
   object-fit:cover; /*画像の縦横比が狂わず切り取ってくれる*/
 }
 /*-- //About_sp --*/
